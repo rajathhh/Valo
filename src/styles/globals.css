@@ -1,0 +1,792 @@
+@import "tailwindcss";
+@plugin "tailwindcss-animate";
+
+/* =============================================================================
+   VALO 2.0 GLOBAL DESIGN SYSTEM
+   Kerala AI Mobility Super App
+   Next.js 16 • React 19 • Tailwind CSS v4
+============================================================================= */
+
+/* =============================================================================
+   DESIGN TOKENS
+============================================================================= */
+
+@theme {
+  /* -------------------------------------------------------------------------
+     Backwater (Primary)
+  ------------------------------------------------------------------------- */
+
+  --color-backwater-950: #071f1c;
+  --color-backwater-900: #0b3d3a;
+  --color-backwater-800: #0e4b43;
+  --color-backwater-700: #115b50;
+  --color-backwater-600: #146b5e;
+  --color-backwater-500: #1c8f7c;
+  --color-backwater-400: #35a893;
+  --color-backwater-300: #6ec4b2;
+  --color-backwater-200: #a9ddd0;
+  --color-backwater-100: #d8f0e9;
+  --color-backwater-50: #eff8f5;
+
+  /* -------------------------------------------------------------------------
+     Brass
+  ------------------------------------------------------------------------- */
+
+  --color-brass-900: #5b430e;
+  --color-brass-700: #8c6a1b;
+  --color-brass-600: #ac8127;
+  --color-brass-500: #c9973f;
+  --color-brass-400: #dbb35f;
+  --color-brass-300: #e7c889;
+  --color-brass-200: #f1ddb3;
+  --color-brass-100: #f8edd9;
+
+  /* -------------------------------------------------------------------------
+     Laterite
+  ------------------------------------------------------------------------- */
+
+  --color-laterite-700: #7a3620;
+  --color-laterite-600: #96412a;
+  --color-laterite-500: #b5502f;
+  --color-laterite-400: #cb6a48;
+  --color-laterite-300: #e08f70;
+  --color-laterite-100: #f8e4db;
+
+  /* -------------------------------------------------------------------------
+     Sand
+  ------------------------------------------------------------------------- */
+
+  --color-sand-50: #fbf8f1;
+  --color-sand-100: #f5efe0;
+  --color-sand-200: #ece2cb;
+  --color-sand-300: #ddceae;
+  --color-sand-400: #c3b18c;
+
+  /* -------------------------------------------------------------------------
+     Ink
+  ------------------------------------------------------------------------- */
+
+  --color-ink-950: #071210;
+  --color-ink-900: #0a1917;
+  --color-ink-850: #0d211e;
+  --color-ink-800: #122a26;
+  --color-ink-700: #1a3934;
+  --color-ink-600: #24493f;
+  --color-ink-400: #6b8a82;
+  --color-ink-200: #b7c9c4;
+  --color-ink-100: #dce6e3;
+
+  /* -------------------------------------------------------------------------
+     Semantic
+  ------------------------------------------------------------------------- */
+
+  --color-success: #2f8f5b;
+  --color-warning: #d6a02c;
+  --color-danger: #b5502f;
+  --color-info: #2e7daa;
+
+  /* -------------------------------------------------------------------------
+     Typography
+  ------------------------------------------------------------------------- */
+
+  --font-display: "Fraunces", ui-serif, Georgia, serif;
+  --font-body: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --font-malayalam: "Noto Sans Malayalam", "Manrope", sans-serif;
+  --font-mono: "IBM Plex Mono", monospace;
+
+  --text-display-2xl: 4.5rem;
+  --text-display-xl: 3.5rem;
+  --text-display-lg: 2.75rem;
+  --text-display-md: 2.25rem;
+  --text-display-sm: 1.75rem;
+
+  /* -------------------------------------------------------------------------
+     Radius
+  ------------------------------------------------------------------------- */
+
+  --radius-sm: .5rem;
+  --radius-md: .875rem;
+  --radius-lg: 1.25rem;
+  --radius-xl: 1.75rem;
+  --radius-2xl: 2.5rem;
+
+  /* -------------------------------------------------------------------------
+     Shadows
+  ------------------------------------------------------------------------- */
+
+  --shadow-card: 0 2px 12px rgba(7,31,28,.08);
+  --shadow-glass: 0 8px 32px rgba(7,31,28,.12);
+  --shadow-elevated: 0 16px 48px rgba(7,31,28,.18);
+
+  /* -------------------------------------------------------------------------
+     Motion
+  ------------------------------------------------------------------------- */
+
+  --ease-route: cubic-bezier(.22,1,.36,1);
+}
+
+/* =============================================================================
+   LIGHT THEME
+============================================================================= */
+
+:root,
+[data-theme="light"] {
+
+  color-scheme: light;
+
+  --bg-canvas: var(--color-sand-50);
+  --bg-surface: #ffffff;
+  --bg-surface-raised: var(--color-sand-100);
+  --bg-inverse: var(--color-ink-950);
+
+  --text-primary: var(--color-ink-950);
+  --text-secondary: #4a5f5a;
+  --text-muted: #7b8f89;
+  --text-inverse: var(--color-sand-50);
+
+  --border-subtle: rgba(7,31,28,.10);
+  --border-default: rgba(7,31,28,.16);
+
+  --brand-primary: var(--color-backwater-600);
+  --brand-primary-hover: var(--color-backwater-700);
+  --brand-accent: var(--color-brass-500);
+
+  --glass-bg: rgba(255,255,255,.60);
+  --glass-border: rgba(255,255,255,.40);
+}
+
+/* =============================================================================
+   DARK THEME
+============================================================================= */
+
+[data-theme="dark"] {
+
+  color-scheme: dark;
+
+  --bg-canvas: var(--color-ink-950);
+  --bg-surface: var(--color-ink-900);
+  --bg-surface-raised: var(--color-ink-850);
+  --bg-inverse: var(--color-sand-50);
+
+  --text-primary: var(--color-sand-50);
+  --text-secondary: var(--color-ink-100);
+  --text-muted: var(--color-ink-400);
+  --text-inverse: var(--color-ink-950);
+
+  --border-subtle: rgba(216,240,233,.08);
+  --border-default: rgba(216,240,233,.14);
+
+  --brand-primary: var(--color-backwater-400);
+  --brand-primary-hover: var(--color-backwater-300);
+  --brand-accent: var(--color-brass-400);
+
+  --glass-bg: rgba(13,33,30,.55);
+  --glass-border: rgba(216,240,233,.08);
+}
+
+/* =============================================================================
+   GLOBAL RESET
+============================================================================= */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  min-height: 100dvh;
+
+  background-color: var(--bg-canvas);
+  color: var(--text-primary);
+
+  font-family: var(--font-body);
+  text-rendering: optimizeLegibility;
+
+  transition:
+    background-color 0.3s var(--ease-route),
+    color 0.3s var(--ease-route);
+}
+
+:lang(ml) {
+  font-family: var(--font-malayalam);
+}
+
+/* =============================================================================
+   ACCESSIBILITY
+============================================================================= */
+
+:focus-visible {
+  outline: 2px solid var(--brand-primary);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+::selection {
+  background: var(--brand-primary);
+  color: #ffffff;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .route-line-path,
+  .valo-aura,
+  .valo-swap-ring {
+    animation: none !important;
+  }
+}
+
+.valo-input {
+  width: 100%;
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-lg);
+  background: transparent;
+  color: var(--text-primary);
+  padding: 1rem 1.25rem;
+  transition:
+    border-color .25s var(--ease-route),
+    box-shadow .25s var(--ease-route);
+}
+
+.valo-input::placeholder {
+  color: var(--text-muted);
+}
+
+.valo-input:focus {
+  outline: none;
+  border-color: var(--brand-primary);
+  box-shadow: 0 0 0 4px rgba(20, 107, 94, 0.12);
+}
+/* =============================================================================
+   DEFAULT ELEMENTS
+============================================================================= */
+
+img,
+picture {
+  display: block;
+  max-width: 100%;
+}
+
+img {
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+svg {
+  flex-shrink: 0;
+}
+
+button {
+  cursor: pointer;
+  font: inherit;
+}
+
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* =============================================================================
+   SCROLLBARS
+============================================================================= */
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--brand-primary);
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--brand-primary-hover);
+}
+
+/* =============================================================================
+   GLASS PANEL
+============================================================================= */
+
+.glass-panel {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+}
+
+/* =============================================================================
+   ROUTE SIGNATURE
+============================================================================= */
+
+.route-line-path {
+  stroke-dasharray: 6 10;
+  animation: route-dash 24s linear infinite;
+}
+
+@keyframes route-dash {
+  to {
+    stroke-dashoffset: -400;
+  }
+}
+/* =============================================================================
+   VALO LAYOUT UTILITIES
+============================================================================= */
+
+.valo-page {
+  min-height: 100dvh;
+  background: var(--bg-canvas);
+}
+
+.valo-container {
+  width: 100%;
+  max-width: 1280px;
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+
+@media (min-width: 640px) {
+  .valo-container {
+    padding-inline: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .valo-container {
+    padding-inline: 2rem;
+  }
+}
+
+/* =============================================================================
+   CARDS
+============================================================================= */
+
+.valo-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+}
+
+.valo-card-elevated {
+  box-shadow: var(--shadow-elevated);
+}
+
+.valo-glass {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+}
+
+/* =============================================================================
+   DIVIDERS
+============================================================================= */
+
+.valo-divider {
+  width: 100%;
+  height: 1px;
+  background: var(--border-subtle);
+}
+
+.valo-divider-vertical {
+  width: 1px;
+  align-self: stretch;
+  background: var(--border-subtle);
+}
+
+/* =============================================================================
+   TRANSITIONS
+============================================================================= */
+
+.valo-transition {
+  transition:
+    background-color .3s var(--ease-route),
+    color .3s var(--ease-route),
+    border-color .3s var(--ease-route),
+    opacity .3s var(--ease-route),
+    transform .3s var(--ease-route),
+    box-shadow .3s var(--ease-route);
+}
+
+.valo-hover-lift {
+  transition:
+    transform .3s var(--ease-route),
+    box-shadow .3s var(--ease-route);
+}
+
+.valo-hover-lift:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-elevated);
+}
+
+/* =============================================================================
+   RINGS
+============================================================================= */
+
+.valo-ring {
+  box-shadow:
+    0 0 0 3px rgba(20, 107, 94, .15);
+}
+
+.valo-ring-gold {
+  box-shadow:
+    0 0 0 3px rgba(201, 151, 63, .18);
+}
+
+/* =============================================================================
+   PREMIUM GRADIENTS
+============================================================================= */
+
+.valo-gradient-primary {
+  background:
+    linear-gradient(
+      135deg,
+      var(--color-backwater-700),
+      var(--color-backwater-500)
+    );
+}
+
+.valo-gradient-gold {
+  background:
+    linear-gradient(
+      135deg,
+      var(--color-brass-600),
+      var(--color-brass-300)
+    );
+}
+
+.valo-gradient-success {
+  background:
+    linear-gradient(
+      135deg,
+      var(--color-success),
+      var(--color-backwater-400)
+    );
+}
+
+.valo-gradient-danger {
+  background:
+    linear-gradient(
+      135deg,
+      var(--color-danger),
+      var(--color-laterite-300)
+    );
+}
+
+/* =============================================================================
+   TEXT UTILITIES
+============================================================================= */
+
+.valo-text-gradient {
+  background:
+    linear-gradient(
+      135deg,
+      var(--color-backwater-600),
+      var(--color-brass-500)
+    );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* =============================================================================
+   LOADING
+============================================================================= */
+
+@keyframes valo-pulse {
+  0% {
+    opacity: .55;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: .55;
+  }
+}
+
+.valo-skeleton {
+  background: rgba(0,0,0,.08);
+  border-radius: var(--radius-md);
+  animation: valo-pulse 1.6s ease-in-out infinite;
+}
+
+[data-theme="dark"] .valo-skeleton {
+  background: rgba(255,255,255,.08);
+}
+/* =============================================================================
+   DECORATIVE EFFECTS
+============================================================================= */
+
+.valo-aura {
+  position: absolute;
+  inset: -25%;
+  pointer-events: none;
+  border-radius: 9999px;
+  filter: blur(72px);
+
+  background: conic-gradient(
+    from 0deg,
+    rgba(214, 169, 74, 0.35),
+    rgba(255, 107, 74, 0.25),
+    rgba(14, 70, 63, 0.35),
+    rgba(214, 169, 74, 0.35)
+  );
+
+  animation: valo-rotate 16s linear infinite;
+}
+
+.valo-swap-ring {
+  border-radius: 9999px;
+
+  background: conic-gradient(
+    from 0deg,
+    #d6a94a,
+    #ff6b4a,
+    #0e463f,
+    #d6a94a
+  );
+
+  animation: valo-rotate 6s linear infinite;
+}
+
+@keyframes valo-rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* =============================================================================
+   FLOATING GLOWS
+============================================================================= */
+
+.valo-glow {
+  box-shadow:
+    0 0 0 1px rgba(20, 107, 94, 0.08),
+    0 12px 32px rgba(20, 107, 94, 0.18);
+}
+
+.valo-glow-gold {
+  box-shadow:
+    0 0 0 1px rgba(201, 151, 63, 0.12),
+    0 12px 32px rgba(201, 151, 63, 0.22);
+}
+
+/* =============================================================================
+   HOVER UTILITIES
+============================================================================= */
+
+.valo-hover-scale {
+  transition: transform .25s var(--ease-route);
+}
+
+.valo-hover-scale:hover {
+  transform: scale(1.02);
+}
+
+.valo-hover-scale-sm {
+  transition: transform .2s var(--ease-route);
+}
+
+.valo-hover-scale-sm:hover {
+  transform: scale(1.01);
+}
+
+/* =============================================================================
+   BUTTON PRESS
+============================================================================= */
+
+.valo-button-press {
+  transition:
+    transform .15s ease,
+    box-shadow .2s var(--ease-route);
+}
+
+.valo-button-press:active {
+  transform: scale(.97);
+}
+
+/* =============================================================================
+   FADE IN
+============================================================================= */
+
+@keyframes valo-fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.valo-fade-in {
+  animation: valo-fade-in .4s ease both;
+}
+
+/* =============================================================================
+   FADE UP
+============================================================================= */
+
+@keyframes valo-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.valo-fade-up {
+  animation: valo-fade-up .5s var(--ease-route) both;
+}
+
+/* =============================================================================
+   SCALE IN
+============================================================================= */
+
+@keyframes valo-scale-in {
+  from {
+    opacity: 0;
+    transform: scale(.96);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.valo-scale-in {
+  animation: valo-scale-in .35s var(--ease-route) both;
+}
+
+/* =============================================================================
+   SHIMMER
+============================================================================= */
+
+@keyframes valo-shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.valo-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.valo-shimmer::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  transform: translateX(-100%);
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255,255,255,.35),
+      transparent
+    );
+
+  animation: valo-shimmer 2s infinite;
+}
+
+[data-theme="dark"] .valo-shimmer::after {
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255,255,255,.08),
+      transparent
+    );
+}
+
+/* =============================================================================
+   SAFE AREA SUPPORT
+============================================================================= */
+
+.valo-safe-bottom {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+.valo-safe-top {
+  padding-top: env(safe-area-inset-top);
+}
+
+/* =============================================================================
+   RESPONSIVE HELPERS
+============================================================================= */
+
+@media (max-width: 640px) {
+  .valo-container {
+    padding-inline: 1rem;
+  }
+}
+
+/* =============================================================================
+   REDUCED MOTION
+============================================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .valo-hover-scale,
+  .valo-hover-scale-sm,
+  .valo-button-press,
+  .valo-fade-in,
+  .valo-fade-up,
+  .valo-scale-in,
+  .valo-shimmer,
+  .valo-aura,
+  .valo-swap-ring {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+  }
+}

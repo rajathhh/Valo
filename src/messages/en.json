@@ -1,0 +1,45 @@
+{
+  "nav": {
+    "ride": "Ride",
+    "bus": "Bus",
+    "hotels": "Hotels",
+    "tourism": "Tourism",
+    "partner": "Partner",
+    "driver": "Drive with VALO",
+    "wallet": "Wallet",
+    "safety": "Safety",
+    "signIn": "Sign in",
+    "getApp": "Get the app"
+  },
+  "services": {
+    "ride": "Ride Booking",
+    "bus": "Bus Tracking",
+    "hotels": "Hotels & Homestays",
+    "tourism": "Tourism",
+    "wallet": "VALO Wallet",
+    "safety": "Safety Centre"
+  },
+  "hero": {
+    "eyebrow": "14 districts · one super app",
+    "title": "Kerala moves with you",
+    "subtitle": "Book a ride, track your bus, find a homestay by the backwaters, or plan a hill-station weekend — all from one app built for Kerala's roads, rains, and rhythms.",
+    "ctaPrimary": "Book a ride",
+    "ctaSecondary": "Explore tourism",
+    "pickupLabel": "Pickup location",
+    "destinationLabel": "Where to?"
+  },
+  "footer": {
+    "servicesHeading": "Services",
+    "companyHeading": "Company",
+    "trustHeading": "Trust & Safety",
+    "rights": "All rights reserved.",
+    "madeIn": "Designed for Kerala. Built for India."
+  },
+  "common": {
+    "loading": "Loading",
+    "viewAll": "View all",
+    "learnMore": "Learn more",
+    "bookNow": "Book now",
+    "from": "From"
+  }
+}
